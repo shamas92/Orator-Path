@@ -7,8 +7,8 @@ export const connect = async () => {
     return;
   }
   try {
-    await mongoose.connect(process.env.MONGODB_URI, {
-      dbName: 'next auth app',
+    await mongoose.connect(process.env.MONGODB.URI, {
+      dbName: 'oratorpath',
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
