@@ -1,23 +1,20 @@
-import mongoose from "mongoose";
-
-let initialize = false;
-
+import mongoose from 'mongoose';
+let initialized = false;
 export const connect = async () => {
-mongoose.set('strictQuery', true);
-if (initialize) {
-    console.log('MongoDB already Connected');
+  mongoose.set('strictQuery', true);
+  if (initialized) {
+    console.log('MongoDB already connected');
     return;
-}
-
-try {
+  }
+  try {
     await mongoose.connect(process.env.MONGODB_URI, {
-        dbName:"oratorpath",
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+      dbName: 'next auth app',
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
-    console.log('MongoDB Connected Successfully');
-    initialize = true;
-} catch (error) {
-    console.error('Error connecting to MongoDB:', error.message);
-}
+    console.log('MongoDB connected');
+    initialized = true;
+  } catch (error) {
+    console.log('MongoDB connection error:', error);
+  }
 };
