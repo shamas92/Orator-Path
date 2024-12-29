@@ -8,7 +8,7 @@ export const connect = async () => {
   }
   try {
     
-    await mongoose.connect(process.env.MONGODB.URI, {
+    await mongoose.connect(process.env.MONGODB_URI, {
       dbName: 'oratorpath',
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -20,4 +20,3 @@ export const connect = async () => {
   }
 };
 
-// Eradicated errors
