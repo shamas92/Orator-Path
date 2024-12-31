@@ -37,12 +37,6 @@ export default function RootLayout({ children }) {
         </ClerkLoaded>
       </body>
     </html>
-    appearance={{
-    layout: {
-      unsafe_disableDevelopmentModeWarnings: true,
-    },
-  }}
-
     </ClerkProvider>
   );
 }
